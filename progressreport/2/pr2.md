@@ -21,7 +21,7 @@ There is not much work on mesh-based scene representation for real-time usage. T
 # New ideas
 As stated in the [Summary], hybrid representations are used and give good results. One approach is, that nodes contain a local (metric) map, local features or a local mesh and the edges contain the transformation between the nodes. When the transformation between two nodes is also represented locally, then these transformations shouldn't be affected by a lot of drift.
 
-With such a hybrid map representation, a robot only has to share the nodes and edges with another robot, which it actually needs to reach a certain location and not the whole map. With a hybrid map representation, a global bundle adjustment also shouldn't be necessary and only the affected local representation and edges have to be adjusted.
+With such a hybrid map representation, a robot only has to share the nodes and edges with another robot, which it actually needs to reach a certain location and not the whole map. Another advantage of a hybrid map representation is, that a global optimization shouldn't be necessary after e.g. a loop closure and only the affected local representation and edges have to be adjusted.
 
 Regarding the planning, where and when to create a new node, there are multiple strategies:
 
@@ -29,11 +29,11 @@ Regarding the planning, where and when to create a new node, there are multiple 
 * When a map exceeds a number of feature points (as in [@Bosse2003] and [@Pedraza2008])
 * Next best view planner (utility function) to decide where the next node should be (considering enough overlap) (as in [@Gonzalez-Banos2002] and [@Akdeniz2015])
 
-<!-- Local mesh / features links to node, in which it was created / first seen. If the location of a node changes eg. after loop closure, mesh or features will be corrected according to the difference. Also the transformation contained in the edges will be updated.-->
+<!-- Local mesh / features links to node, in which it was created / first seen. If the location of a node changes e.g. after loop closure, mesh or features will be corrected according to the difference. Also the transformation contained in the edges will be updated.-->
 
 # Open questions
 
-* Which local (metric) representation should be chosen?
+* Which local (metric) representation is the best for our purpose?
     * Is the local representation only used for frontier representation or also for localization?
 * What is the best approach, to decide where the next node should be created / the next observation should be made?
 * How to merge meshes? Do they need to be rebuilt?
