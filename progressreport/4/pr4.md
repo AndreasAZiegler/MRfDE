@@ -13,13 +13,12 @@ Since the last meeting, I implemented a simulation environment for a proof of co
 
 # Open questions
 
-* What of the 2D approach will also work in 3D?
-* Should I start with an approach or rather first learn more about meshes (I tend to the second choise)?
+* Should I start with an approach or rather first learn more about meshes (I tend to the second choice)?
 
 # Next steps
 
+* Finish polygon calculation (with ray intersection) Milestone: End of this week
 * Get a clear view about mesh-based approaches (Probably with the resources which Claudio Mura recommended)
-* Finish polygon calculation (with ray intersection)
 * Work on the proof of concept (Toy example)
 
 <!--# Bibliography-->
