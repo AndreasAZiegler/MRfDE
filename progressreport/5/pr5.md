@@ -12,7 +12,7 @@ Since the last meeting, I improved the 2D simulation environment for a proof of 
 # New ideas
 The ideas/implementation of the above mentioned literature could be a way to go in the 3D case.
 
-# Open questions
+<!--# Open questions-->
 
 # Next steps
 
