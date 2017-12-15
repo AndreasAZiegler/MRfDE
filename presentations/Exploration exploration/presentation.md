@@ -67,3 +67,9 @@
  * Merge active areas
 
 <center><img src="./loop-closure.png" height="460"/></center>
+
+---
+
+# 2D proof of concept
+
+https://youtu.be/br5jlRJMpD0
