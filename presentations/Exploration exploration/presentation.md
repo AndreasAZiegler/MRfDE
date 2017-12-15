@@ -40,3 +40,30 @@
 ---
 
 # 2D proof of concept
+
+ * Use orientation of the polygons and the cross product to determine point order for merging
+
+<center>
+<img src="./diagrams/polygon-intersection-1.png" height="210"/>
+<img src="./diagrams/polygon-intersection-2.png" height="210"/>
+
+<font size="5"><span style="color:blue">existing polygon</span>, <span style="color:orange">new polygon</span>, <span style="color:green">resulting polygon</span></font>
+</center>
+
+---
+
+# 2D proof of concept
+
+ * Only merge polygons within an active area to prevent wrong maps due to drift
+
+<center><img src="./active-area.png" height="460"/></center>
+
+---
+
+# 2D proof of concept
+
+ * Merge polygon if SLAM system detected a loop closure
+ * Correct polygon according the corrected pose graph
+ * Merge active areas
+
+<center><img src="./loop-closure.png" height="460"/></center>

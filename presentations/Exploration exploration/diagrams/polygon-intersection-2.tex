@@ -1,0 +1,19 @@
+% Polygon intersection
+% Author: Andreas Ziegler
+\documentclass[]{article}
+\usepackage[utf8x]{inputenc} % utf8 encoding
+\usepackage[T1]{fontenc} % use T1 fonts
+\usepackage{amsmath} % nice math symbols
+\usepackage{bm} % bold math
+\usepackage{color} % change text color   
+
+\usepackage{tikz}
+
+\begin{document}
+	\begin{tikzpicture}
+		\draw[thick, ->, blue] (0,0) -- (4,2);
+		\draw[thick, ->, orange] (0,2) -- (4,0);
+		
+		\draw[thick, ->, green] (0,2.1) -- (2,1.1) -- (4,2.1);
+	\end{tikzpicture}
+\end{document}
