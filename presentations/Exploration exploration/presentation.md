@@ -1,75 +1,71 @@
 <!-- $theme: default -->
 
-# Minimal Representation for Decentralized Exploration
+# <center>Pose-graph-based representation for exploration</center>
+# <center>-</center>
+# <center>current project state</center>
 
 ---
 <!-- page_number: true -->
 # Motivation
 
- * Exploring and area with multiple robots to decrease the time needed
- * Minimal representation to ease the exchange of information between robot
- * A good minimal representation could simplify the exploration task
+ * Most current exploration methods are based on grid-based representations
+ * These representations assume a perfect state estimate
+ * Not realistic for visual(-inertial) odometry, which produces a pose-graph exhibiting drift
+ * We seek a pose-graph-based representation for exploration
 
 ---
 
-# Idea
+# Frontier-based exploration
 
  * Represent map as obstacles and frontiers
-   * A frontier is the border between known- and unknows space
+   * A frontier is the border between known / unknown space
  * Exploration is finished when there are no more frontiers
  * Robots have to share frontiers and the information how to go there
 
 ---
 
-# Approach
+# Approach - Mesh / Polygon
 
- * Use meshes (Polygons in 2D) with frontiers and obstacles
- * Merge existing polygon with the polygon from the frustum
-   * Find polygon intersections
-   * Only consider intersections with the polygon within an active area
- * Correct and merge polygon after a loop closure
+* Edges represent <span style="color:blue">frontiers</span> or <span style="color:red">obstacles</span>
+* Free space is inside the polygon
+<center><img src="./polygon.png" height="300"/></center>
 
 ---
 
-# So far
+# Why is this better than a grid?
 
- * Literature review
- * Created a 2D proof of concept
- * Plans to go 3D
-
----
-
-# 2D proof of concept
-
- * Use orientation of the polygons and the cross product to determine point order for merging
-
-<center>
-<img src="./diagrams/polygon-intersection-1.png" height="210"/>
-<img src="./diagrams/polygon-intersection-2.png" height="210"/>
-
-<font size="5"><span style="color:blue">existing polygon</span>, <span style="color:orange">new polygon</span>, <span style="color:green">resulting polygon</span></font>
-</center>
+ * Naturally deformable with the pose graph
+<center><img src="./polygon-uncorrected.png" height="360"/><img src="./polygon-corrected.png" height="360"/></center>
 
 ---
 
-# 2D proof of concept
+# Active area
 
- * Only merge polygons within an active area to prevent wrong maps due to drift
+ * The active area is a local area within which the drift is small
+ * Polygons within the active area are related
+   * Overlapping polygons only get merged if they are in an active area
+ * This prevents merging of unrelated polygons
+   * Good for noisy estimates
 
-<center><img src="./active-area.png" height="460"/></center>
-
----
-
-# 2D proof of concept
-
- * Merge polygon if SLAM system detected a loop closure
- * Correct polygon according the corrected pose graph
- * Merge active areas
-
-<center><img src="./loop-closure.png" height="460"/></center>
+<!--<center><img src="./active-area.png" height="450"/></center>-->
 
 ---
 
-# 2D proof of concept
+# Active area
 
-https://youtu.be/br5jlRJMpD0
+ * This prevents merging of unrelated polygons
+   * Good for noisy estimates
+<center><img src="./active-area.png" height="450"/></center>
+
+---
+
+# How to merge if it should actuallly overlap?
+
+ * Merge polygon if SLAM system detected a loop closure:
+   * Correct polygon according the corrected pose graph
+   * Merge active areas
+   * Merge polygons
+ 
+ https://youtu.be/br5jlRJMpD0
+
+<!--<center><img src="./loop-closure.png" height="460"/></center>-->
