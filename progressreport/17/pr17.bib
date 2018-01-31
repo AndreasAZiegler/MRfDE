@@ -1,0 +1,21 @@
+@article{Gonzalez-Banos2002,
+abstract = {In this paper, we investigate safe and efficient map-building strategies for a mobile robot with imperfect control and sensing. In the implementation, a robot equipped with a range sensor builds a polygonal map (layout) of a previously unknown indoor environment. The robot explores the environment and builds the map concurrently by patching together the local models acquired by the sensor into a global map. A well-studied and related problem is the simultaneous localization and mapping (SLAM) problem, where the goal is to integrate the information collected during navigation into the most accurate map possible. However, SLAM does not address the sensor-placement portion of the map-building task. That is, given the map built so far, where should the robot go next? This is the main question addressed in this paper. Concretely, an algorithm is proposed to guide the robot through a series of 'good' positions, where 'good' refers to the expected amount and quality of the information that will be revealed at each new location. This is similar to the next-best-view (NBV) problem studied in computer vision and graphics. However, in mobile robotics the problem is complicated by several issues, two of which are particularly crucial. One is to achieve safe navigation despite an incomplete knowledge of the environment and sensor limitations (e.g., in range and incidence). The other issue is the need to ensure sufficient overlap between each new local model and the current map, in order to allow registration of successive views under positioning uncertainties inherent to mobile robots. To address both issues in a coherent framework, in this paper we introduce the concept of a safe region, defined as the largest region that is guaranteed to be free of obstacles given the sensor readings made so far. The construction of a safe region takes sensor limitations into account. In this paper we also describe an NBV algorithm that uses the safe-region concept to select the next robot position at each step. The new position is chosen within the safe region in order to maximize the expected gain of information under the constraint that the local model at this new position must have a minimal overlap with the current global map. In the future, NBV and SLAM algorithms should reinforce each other. While a SLAM algorithm builds a map by making the best use of the available sensory data, an NBV algorithm, such as that proposed here, guides the navigation of the robot through positions selected to provide the best sensory inputs.},
+annote = {This paper investigates save and efficient map-building strategies for a mobile robot with imperfect control and sensing. The robot explores the environment and builds the map concurrently by patching together the local models acquired by the sensor into a global map.
+In this paper, an algorithm is proposed to guide the robot through a series of "good" positions (expected amount and quality of the information that will be revealed at each new location).
+To address the issues of safe navigation despite an incomplete knowledge of the environment and sensor limitations and to ensure sufficient overlap between each new local model and the current map, in order to allow registration of successive views, the concept of a safe region is introduced.},
+archivePrefix = {arXiv},
+arxivId = {1004.4027},
+author = {Gonzalez-Banos, H. H and Latombe, J.-C.},
+doi = {10.1177/0278364902021010834},
+eprint = {1004.4027},
+file = {:home/andreasziegler/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Gonzalez-Banos, Latombe - 2002 - Navigation Strategies for Exploring Indoor Environments.pdf:pdf},
+isbn = {0278-3649},
+issn = {0278-3649},
+journal = {The International Journal of Robotics Research},
+number = {10-11},
+pages = {829--848},
+pmid = {25246403},
+title = {{Navigation Strategies for Exploring Indoor Environments}},
+volume = {21},
+year = {2002}
+}
